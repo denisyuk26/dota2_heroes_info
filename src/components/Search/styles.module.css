@@ -6,13 +6,21 @@
   input {
     width: 98%;
     outline:none;
-    border-radius: 6px;
-    padding: 10px;
+    
+    padding: 10px 0;
     border: none;
     align-self: center;
     margin-top: 20px;
     display: block;
     margin: 0 auto;
+    font-size: 20px;
+    background: #2b2c32;
+    color: #989899;
+    border-bottom: 1px solid #989899;
+    &:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
   } 
   .cancelButton {
     position: absolute;

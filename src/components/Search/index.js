@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 // Instruments
 import styles from "./styles.module.css";
-import {MdCancel} from "react-icons/md"
+import {MdCancel, MdSearch} from "react-icons/md"
 
 const Search = props => {
 
@@ -16,11 +16,22 @@ const Search = props => {
   );
   //JSX for result
   const heroesJSX = filterHeroes.map(hero => {
+    const name = hero.localized_name.replace(
+      regexp,
+      `<span class=${styles.highlight}>${props.filter}</span>`
+    );
     return (
       <Link key={hero.id} to={`/hero/${hero.id}`}>
       <li onClick={() => localStorage.setItem('hero', hero.id)}>
         <img src={`https://api.opendota.com${hero.img}`} alt="hero icon" />
-        <div>{hero.localized_name}</div>
+        <div>
+          <span 
+          dangerouslySetInnerHTML={{
+            __html: `${name}`
+          }}>
+            
+          </span>
+        </div>
       </li>
     </Link>
     );
@@ -39,7 +50,7 @@ const Search = props => {
         value={props.filter}
         onChange={event => props.getUserInput(event.target.value)}
       />
-      {props.filter !== ''? <MdCancel className = {styles.cancelButton} onClick={()=> props.clearFilter()} />:null}
+      {props.filter !== ''? <MdCancel className = {styles.cancelButton} onClick={()=> props.clearFilter()} />: <MdSearch className = {styles.cancelButton}/>}
       </div>
       {
         <ul className={styles.hero_search_result}>
