@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/dota2_heroes_info/static/js/runtime~main.fd82c04b.js"
   },
   {
-    "revision": "b1d3fa66c182f383804b",
-    "url": "/dota2_heroes_info/static/js/main.b1d3fa66.chunk.js"
+    "revision": "8dc5c16797c0acffc1b8",
+    "url": "/dota2_heroes_info/static/js/main.8dc5c167.chunk.js"
   },
   {
     "revision": "c8e80c4e5d9be3467963",
     "url": "/dota2_heroes_info/static/js/2.c8e80c4e.chunk.js"
   },
   {
-    "revision": "b1d3fa66c182f383804b",
-    "url": "/dota2_heroes_info/static/css/main.3ad5d418.chunk.css"
+    "revision": "8dc5c16797c0acffc1b8",
+    "url": "/dota2_heroes_info/static/css/main.c453d36c.chunk.css"
   },
   {
-    "revision": "e501b06d9208120724257cf05c07186b",
+    "revision": "b3e2ccb47f3ac28ec6e51be21e7544bf",
     "url": "/dota2_heroes_info/index.html"
   }
 ];

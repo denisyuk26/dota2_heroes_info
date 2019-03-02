@@ -1,13 +1,13 @@
 {
-  "main.css": "/dota2_heroes_info/static/css/main.3ad5d418.chunk.css",
-  "main.js": "/dota2_heroes_info/static/js/main.b1d3fa66.chunk.js",
-  "main.js.map": "/dota2_heroes_info/static/js/main.b1d3fa66.chunk.js.map",
+  "main.css": "/dota2_heroes_info/static/css/main.c453d36c.chunk.css",
+  "main.js": "/dota2_heroes_info/static/js/main.8dc5c167.chunk.js",
+  "main.js.map": "/dota2_heroes_info/static/js/main.8dc5c167.chunk.js.map",
   "runtime~main.js": "/dota2_heroes_info/static/js/runtime~main.fd82c04b.js",
   "runtime~main.js.map": "/dota2_heroes_info/static/js/runtime~main.fd82c04b.js.map",
   "static/js/2.c8e80c4e.chunk.js": "/dota2_heroes_info/static/js/2.c8e80c4e.chunk.js",
   "static/js/2.c8e80c4e.chunk.js.map": "/dota2_heroes_info/static/js/2.c8e80c4e.chunk.js.map",
   "index.html": "/dota2_heroes_info/index.html",
-  "precache-manifest.c6a680c9ca22d3efdc37604ebb20ebec.js": "/dota2_heroes_info/precache-manifest.c6a680c9ca22d3efdc37604ebb20ebec.js",
+  "precache-manifest.5b7dfde4e738c77598e6e13956d69a3d.js": "/dota2_heroes_info/precache-manifest.5b7dfde4e738c77598e6e13956d69a3d.js",
   "service-worker.js": "/dota2_heroes_info/service-worker.js",
-  "static/css/main.3ad5d418.chunk.css.map": "/dota2_heroes_info/static/css/main.3ad5d418.chunk.css.map"
+  "static/css/main.c453d36c.chunk.css.map": "/dota2_heroes_info/static/css/main.c453d36c.chunk.css.map"
 }
