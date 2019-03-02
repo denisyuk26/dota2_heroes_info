@@ -1,41 +1,95 @@
 .search {
-  grid-row: 2;
-  margin-left: 7px;
-  display: flex;
-  margin: 0 auto;
+  display: grid;  
+  .search_wrap {
+    position: relative;
+  }
   input {
-    width: 229px;
+    width: 98%;
+    outline:none;
+    border-radius: 6px;
     padding: 10px;
     border: none;
+    align-self: center;
+    margin-top: 20px;
+    display: block;
+    margin: 0 auto;
+  } 
+  .cancelButton {
+    position: absolute;
+    font-size: 25px;
+    top: 6px;
+    right: 15px;
   }
 
-  ul {
-    opacity: 0.97;
-    width: 250px;
-    position: absolute;
-    top: 12vh;
-    background: #2b2c32;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    li {
-      padding-top: 0;
-      &.no_result {
-        padding: 1px;
-        font-size: 20px;
-        height: 45px;
-      }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      list-style-type: none;
+      justify-content: center;
+      padding-inline-start: 0;
+  
       a {
-        height: 40px;
+        color: #989899;
+        text-decoration: none;
       }
-      .hero_icon {
-        max-width: 30px;
+      li {
+        margin: 0 auto;
         width: 100%;
-        margin-left: 10px;
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background: #222328;
+        }
+        img {
+          max-width: 11vw;
+          width: 100%;
+        }
+        div {
+          text-align: center;
+        }
       }
-    }
   }
 }
 
 .highlight {
   background: #98989957;
+}
+
+@custom-media --desktop-small-viewport (max-width: 1024px);
+@custom-media --tablet-viewport (max-width: 768px);
+@custom-media --mobile-viewport (max-width: 465px);
+
+@media (--tablet-viewport) {
+  .search {
+    input {
+      width: 95%;
+    }
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+      li {
+        img {
+          max-width: 45vw;
+        }
+      }
+    }
+  }
+}
+
+@media (--mobile-viewport) {
+  .search {
+    input {
+      width: 90%;
+    }
+    ul {
+      grid-template-columns: 1fr;
+      li {
+        img {
+          max-width: 90vw;
+        }
+      }
+    }
+  }
 }

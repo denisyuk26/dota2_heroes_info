@@ -1,64 +1,51 @@
 // Core
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { getActiveHero } from "../../store/actions";
+import { getUserInput, clearFilter } from "../../store/actions";
 import { bindActionCreators } from "redux";
-
+import { connect } from "react-redux";
 // Instruments
 import styles from "./styles.module.css";
-import { connect } from "react-redux";
+import {MdCancel} from "react-icons/md"
 
 const Search = props => {
-  const [filter, setFilter] = useState("");
-  const regexp = new RegExp(filter, "gi");
+
+  const regexp = new RegExp(props.filter, "gi");
   const filterHeroes = props.heroesList.filter(hero =>
     regexp.test(hero.localized_name)
   );
-  console.log(filterHeroes)
- 
-    const heroesJSX =  filterHeroes.map(hero => {
-      
-      const name = hero.localized_name.replace(
-        regexp,
-        `<span class=${styles.highlight}>${filter}</span>`
-      ) ;
+  //JSX for result
+  const heroesJSX = filterHeroes.map(hero => {
+    return (
+      <Link key={hero.id} to={`/hero/${hero.id}`}>
+      <li onClick={() => localStorage.setItem('hero', hero.id)}>
+        <img src={`https://api.opendota.com${hero.img}`} alt="hero icon" />
+        <div>{hero.localized_name}</div>
+      </li>
+    </Link>
+    );
+  });
   
-        return (
-        
-          <li key={hero.id} onClick={() => localStorage.setItem("hero", hero.id)}>
-            <Link to={`/hero/${hero.id}`}>
-              <span
-                className="country"
-                dangerouslySetInnerHTML={{
-                  __html: `${name}`
-                }}
-              />
-              <img
-                src={`https://api.opendota.com${hero.icon}`}
-                className={styles.hero_icon}
-                alt="icon"
-              />
-            </Link>
-          </li>
-        );
-   
-  
-      
-    });
-    const emptyResult =  <li className={styles.no_result}>No results</li>
- 
+  //JSX for empty result
+  const emptyResult = <li className={styles.no_result}>No results</li>;
+
 
   return (
     <section className={styles.search}>
+      <div className ={styles.search_wrap}>
       <input
         placeholder="Hero name"
         type="text"
-        value={filter}
-        onChange={event => setFilter(event.target.value)}
+        value={props.filter}
+        onChange={event => props.getUserInput(event.target.value)}
       />
-      { filter !== '' ? (
-        <ul className={styles.hero_search_result}> {filterHeroes.length > 0 ? heroesJSX : emptyResult}</ul>
-      ) : null}
+      {props.filter !== ''? <MdCancel className = {styles.cancelButton} onClick={()=> props.clearFilter()} />:null}
+      </div>
+      {
+        <ul className={styles.hero_search_result}>
+          {filterHeroes.length > 0 ? heroesJSX : emptyResult}
+        </ul>
+     }
     </section>
   );
 };
@@ -66,13 +53,14 @@ const Search = props => {
 function mapStateToProps(state) {
   return {
     heroesList: state.heroesList,
-    activeHero: state.activeHero
+    filter: state.filter,
   };
 }
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      getActiveHero
+      getUserInput,
+      clearFilter
     },
     dispatch
   );

@@ -1,4 +1,4 @@
-import {GET_ACTIVE_HERO, FETCHING_HEROES_LIST_SUCCESS} from '../types'
+import { FETCHING_HEROES_LIST_SUCCESS, GET_USER_INPUT, CLEAR_USER_FILTER} from '../types'
 import {urlApi} from '../index'
 
 export const getHeroesList = () => async dispatch => {
@@ -17,11 +17,16 @@ export const getHeroesList = () => async dispatch => {
     
 }
 
-export const getActiveHero = (hero) => {
-    localStorage.setItem('hero', hero.id);
+
+export const getUserInput = (input) => {
     return {
-        type: GET_ACTIVE_HERO,
-        payload: hero
+        type: GET_USER_INPUT,
+        payload: input
     }
 }
 
+export const clearFilter = () => {
+    return {
+        type: CLEAR_USER_FILTER,
+    }
+}

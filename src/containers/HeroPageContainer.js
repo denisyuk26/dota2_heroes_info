@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PageWithHeroDetails from "../components/HeroDetails/PageWithHeroDetails";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getHeroesList, getActiveHero } from "../store/actions";
+import { getHeroesList } from "../store/actions";
 
 class HeroPageContainer extends Component {
   componentDidMount() {
@@ -20,7 +20,6 @@ class HeroPageContainer extends Component {
 function mapStateToProps(state) {
   return {
     heroesList: state.heroesList,
-    activeHero: state.activeHero
   };
 }
 
@@ -28,7 +27,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       getHeroesList,
-      getActiveHero
     },
     dispatch
   );

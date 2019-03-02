@@ -1,13 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
-import {heroesList, getActiveHero} from './reducers';
+import {heroesList, getUserInput} from './reducers';
 import thunk from "redux-thunk";
 
 
 const store = createStore(
     combineReducers({
         heroesList: heroesList,
-        activeHero: getActiveHero
+        filter: getUserInput,
     }),
     {},
     applyMiddleware(logger, thunk)
