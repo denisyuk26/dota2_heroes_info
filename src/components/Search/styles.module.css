@@ -1,0 +1,33 @@
+.search {
+  position: relative;
+  grid-row: 2;
+  margin-left: 7px;
+  input {
+    width: 20vw;
+    padding: 10px;
+    border: none;
+  }
+
+  ul {
+    width: 250px;
+    position: absolute;
+    background: #2b2c32;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    li {
+      padding-top: 0;
+      a {
+        height: 40px;
+      }
+      .hero_icon {
+        max-width: 30px;
+        width: 100%;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.highlight {
+  background: #98989957;
+}

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { urlApi } from "../../store/index";
 import { Link } from "react-router-dom";
-import styles from './heroes_list.module.css';
+import styles from "./heroes_list.module.css";
+import Search from "../Search";
 export default class HeroesList extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ export default class HeroesList extends Component {
   render() {
     return (
       <div className={styles.heroes_list}>
+        <Search />
         <h1>Hero List</h1>
         <ul>{this.renderHeroesList()}</ul>
       </div>
