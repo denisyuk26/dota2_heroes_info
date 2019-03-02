@@ -4,6 +4,21 @@
   background: #2b2c32;
   
   color: #989899;
+  .nav_panel{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    a {
+      text-decoration: none;
+      font-size: 2em;
+      color: #989899;
+      font-weight: 500;
+      padding-left: 20px;
+      &:hover {
+        color: #d2d2d2;
+      }
+    }
+  }
   h1 {
     text-align: center;
   }
@@ -80,6 +95,7 @@
 
 @media (--tablet-viewport) {
   .hero_details_wrap {
+   
     ul {
       
       li {

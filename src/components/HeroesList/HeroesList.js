@@ -25,7 +25,10 @@ export default class HeroesList extends Component {
     return (
       <div className={styles.heroes_list}>
         <Search />
+        <div>
+        
         <h1>Hero List</h1>
+        </div>
         <ul>{this.renderHeroesList()}</ul>
       </div>
     );

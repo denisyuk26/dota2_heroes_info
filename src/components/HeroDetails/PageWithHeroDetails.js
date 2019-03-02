@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styles from './hero_details.module.css'
 import {urlApi} from '../../store/index'
+import { Link } from "react-router-dom";
+
 export default class PageWithHeroDetails extends Component {
   constructor(props) {
     super(props);
@@ -24,15 +26,8 @@ export default class PageWithHeroDetails extends Component {
         <p> Attributes: 
         <span className={styles.agi}> {`${detail.base_agi}+${detail.agi_gain} `}</span>
         <span className={styles.str}> {`${detail.base_str}+${detail.str_gain} `}</span>
-        <span className={styles.int}> {`${detail.base_int}+${detail.int_gain} `}</span>
-
-    
-
-       
+        <span className={styles.int}> {`${detail.base_int}+${detail.int_gain} `}</span>    
         </p>
-
-
-
       </div>
       
       </li>
@@ -41,7 +36,10 @@ export default class PageWithHeroDetails extends Component {
   render() {
     return (
       <div className={styles.hero_details_wrap}>
-        <h1>Hero details</h1>
+      <div className={styles.nav_panel}>
+      <Link to='/'>Home</Link>
+      <h1>Hero details</h1>
+      </div>
         <ul>{this.renderActiveHeroDetail()}</ul>
       </div>
     );

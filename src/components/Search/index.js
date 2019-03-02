@@ -14,30 +14,39 @@ const Search = props => {
   const filterHeroes = props.heroesList.filter(hero =>
     regexp.test(hero.localized_name)
   );
-  const heroesJSX = filterHeroes.map(hero => {
-    const name = hero.localized_name.replace(
-      regexp,
-      `<span class=${styles.highlight}>${filter}</span>`
-    );
-
-    return (
-      <li key={hero.id} onClick={() => localStorage.setItem("hero", hero.id)}>
-        <Link to={`/hero/${hero.id}`}>
-          <span
-            className="country"
-            dangerouslySetInnerHTML={{
-              __html: `${name}`
-            }}
-          />
-          <img
-            src={`https://api.opendota.com${hero.icon}`}
-            className={styles.hero_icon}
-            alt="icon"
-          />
-        </Link>
-      </li>
-    );
-  });
+  console.log(filterHeroes)
+ 
+    const heroesJSX =  filterHeroes.map(hero => {
+      
+      const name = hero.localized_name.replace(
+        regexp,
+        `<span class=${styles.highlight}>${filter}</span>`
+      ) ;
+  
+        return (
+        
+          <li key={hero.id} onClick={() => localStorage.setItem("hero", hero.id)}>
+            <Link to={`/hero/${hero.id}`}>
+              <span
+                className="country"
+                dangerouslySetInnerHTML={{
+                  __html: `${name}`
+                }}
+              />
+              <img
+                src={`https://api.opendota.com${hero.icon}`}
+                className={styles.hero_icon}
+                alt="icon"
+              />
+            </Link>
+          </li>
+        );
+   
+  
+      
+    });
+    const emptyResult =  <li className={styles.no_result}>No results</li>
+ 
 
   return (
     <section className={styles.search}>
@@ -47,8 +56,8 @@ const Search = props => {
         value={filter}
         onChange={event => setFilter(event.target.value)}
       />
-      {filter !== "" ? (
-        <ul className={styles.hero_search_result}>{heroesJSX}</ul>
+      { filter !== '' ? (
+        <ul className={styles.hero_search_result}> {filterHeroes.length > 0 ? heroesJSX : emptyResult}</ul>
       ) : null}
     </section>
   );
