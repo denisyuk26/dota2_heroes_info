@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dota2_heroes_info/precache-manifest.5b7dfde4e738c77598e6e13956d69a3d.js"
+  "/dota2_heroes_info/precache-manifest.c5cbe58ca49b140771dc269546dbb824.js"
 );
 
 workbox.clientsClaim();
