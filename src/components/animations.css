@@ -1,0 +1,71 @@
+.fade-ava {
+  opacity: 0;
+}
+
+.fade-ava-appear {
+  opacity: 0;
+}
+
+.fade-ava-appear.fade-ava-appear-active {
+  opacity: 0;
+  transition: opacity 500ms linear 500ms;
+}
+.fade-ava-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-ava-enter.fade-ava-enter-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
+.fade-ava-exit {
+  opacity: 0;
+}
+.fade-ava-exit.fade-ava-exit-active {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+.fade-ava-enter-done {
+  opacity: 0;
+}
+.fade-ava-exit-done {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+}
+.fade-appear {
+  opacity: 0;
+  /* z-index: 1; */
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 0;
+  transition: opacity 600ms linear 300ms;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+
+.fade-exit {
+  opacity: 0;
+}
+.fade-exit.fade-exit-active {
+  opacity: 1;
+  transition: opacity 400ms linear;
+}
+.fade-enter-done {
+  opacity: 0;
+}
+.fade-exit-done {
+  opacity: 1;
+}

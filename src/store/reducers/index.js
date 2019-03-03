@@ -1,4 +1,9 @@
-import { FETCHING_HEROES_LIST_SUCCESS, GET_USER_INPUT, CLEAR_USER_FILTER} from '../types'
+import {
+  FETCHING_HEROES_LIST_SUCCESS,
+  GET_USER_INPUT,
+  CLEAR_USER_FILTER,
+  GET_USER_SEARCH_LINE
+} from "../types";
 const initialState = [];
 export function heroesList(state = initialState, action) {
   switch (action.type) {
@@ -9,14 +14,13 @@ export function heroesList(state = initialState, action) {
   }
 }
 
-
-export function getUserInput (state = '', action) {
+export function getUserInput(state = "", action) {
   switch (action.type) {
     case GET_USER_INPUT:
-      return action.payload
-      case CLEAR_USER_FILTER: 
-      return ''
-      default: 
-      return state
+      return action.payload;
+    case CLEAR_USER_FILTER:
+      return "";
+    default:
+      return state;
   }
 }

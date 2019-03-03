@@ -1,12 +1,12 @@
 .search {
-  display: grid;  
+  display: grid;
   .search_wrap {
     position: relative;
   }
   input {
     width: 98%;
-    outline:none;
-    
+    outline: none;
+
     padding: 10px 0;
     border: none;
     align-self: center;
@@ -17,11 +17,10 @@
     background: #2b2c32;
     color: #989899;
     border-bottom: 1px solid #989899;
-    &:focus::-webkit-input-placeholder 
-{
-    color: transparent;
-}
-  } 
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+  }
   .cancelButton {
     position: absolute;
     font-size: 25px;
@@ -29,36 +28,36 @@
     right: 15px;
   }
 
-    ul {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      list-style-type: none;
+  ul {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    list-style-type: none;
+    justify-content: center;
+    padding-inline-start: 0;
+
+    a {
+      color: #989899;
+      text-decoration: none;
+    }
+    li {
+      margin: 0 auto;
+      width: 100%;
+      padding-top: 15px;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      padding-inline-start: 0;
-  
-      a {
-        color: #989899;
-        text-decoration: none;
+      align-items: center;
+      &:hover {
+        background: #222328;
       }
-      li {
-        margin: 0 auto;
+      img {
+        max-width: 11vw;
         width: 100%;
-        padding-top: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-          background: #222328;
-        }
-        img {
-          max-width: 11vw;
-          width: 100%;
-        }
-        div {
-          text-align: center;
-        }
       }
+      div {
+        text-align: center;
+      }
+    }
   }
 }
 
